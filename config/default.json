@@ -1,0 +1,18 @@
+{
+    "node": {
+      "deviceId": "your-device-id",
+      "region": "your-region",
+      "walletAddress": "your-wallet-address"
+    },
+    "network": {
+      "regionalNode": "wss://your-regional-node-url",
+      "discoveryPort": 5000,
+      "reconnectInterval": 5000,
+      "maxReconnectAttempts": 10,
+      "heartbeatInterval": 30000,
+      "peerTimeout": 60000
+    },
+    "localNetwork": {
+      "discoveryPort": 5001
+    }
+  }

@@ -1,0 +1,72 @@
+{
+    "name": "tenzro-local-node",
+    "description": "Tenzro Network Local Node",
+    "keywords": [
+      "node",
+      "tenzro",
+      "blockchain",
+      "validator",
+      "local"
+    ],
+    "website": "https://tenzro.org",
+    "repository": "https://github.com/tenzronetwork/local-node",
+    "success_url": "/health",
+    "env": {
+      "NODE_ENV": {
+        "description": "Environment for the application",
+        "value": "production",
+        "required": true
+      },
+      "NODE_TYPE": {
+        "description": "Type of node",
+        "value": "individual",
+        "required": true
+      },
+      "NODE_TIER": {
+        "description": "Tier of node",
+        "value": "inference",
+        "required": true
+      },
+      "TOKEN_BALANCE": {
+        "description": "Initial token balance",
+        "value": "1000",
+        "required": true
+      },
+      "DHT_REFRESH_INTERVAL": {
+        "description": "DHT refresh interval in milliseconds",
+        "value": "60000",
+        "required": true
+      },
+      "METRICS_UPDATE_INTERVAL": {
+        "description": "Metrics update interval in milliseconds",
+        "value": "15000",
+        "required": true
+      },
+      "HEALTH_CHECK_INTERVAL": {
+        "description": "Health check interval in milliseconds",
+        "value": "30000",
+        "required": true
+      },
+      "WEBSOCKET_PING_INTERVAL": {
+        "description": "WebSocket keepalive interval in milliseconds",
+        "value": "25000",
+        "required": true
+      }
+    },
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "basic"
+      }
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ],
+    "environments": {
+      "review": {
+        "addons": []
+      }
+    }
+  }

@@ -1,0 +1,8 @@
+# heroku.yml
+build:
+  docker:
+    web: Dockerfile
+  config:
+    NODE_ENV: production
+    NODE_TYPE: individual
+    NODE_TIER: inference

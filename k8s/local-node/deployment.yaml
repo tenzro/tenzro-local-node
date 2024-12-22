@@ -1,0 +1,39 @@
+# k8s/local-node/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tenzro-local-node
+  namespace: tenzro-network
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tenzro-local-node
+  template:
+    metadata:
+      labels:
+        app: tenzro-local-node
+    spec:
+      containers:
+        - name: local-node
+          image: tenzro/local-node:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: NODE_TYPE
+              value: "individual"
+            - name: NODE_TIER
+              value: "inference"
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10

@@ -1,0 +1,5 @@
+{
+    "network": {
+      "regionalNode": "wss://your-production-regional-node-url"
+    }
+  }

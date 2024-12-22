@@ -1,0 +1,10 @@
+# .slugignore
+.git
+.github
+.vscode
+coverage
+test
+docs
+*.test.ts
+*.md
+!README.md

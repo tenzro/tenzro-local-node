@@ -1,0 +1,8 @@
+{
+    "bindings": [
+      {
+        "role": "roles/run.invoker",
+        "members": ["allUsers"]
+      }
+    ]
+  }
